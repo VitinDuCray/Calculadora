@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -16,8 +20,7 @@
             <h3>Envolve 4 exercícios</h3>
 
             <div class="calculadora">
-                <div class="previa">
-
+                <div id="visor" class="previa">
                 </div>
                 <div class="resultado">
 
@@ -36,21 +39,22 @@
                     <button onclick="AdicionarNumero('1')">1</button>
                     <button onclick="AdicionarNumero('2')">2</button>
                     <button onclick="AdicionarNumero('3')">3</button>
-                    <button onclick="AdicionarNumero('')">/</button>
+                    <button onclick="AdicionarNumero('/')">/</button>
 
                     <button class="nulo">V</button>
                     <button onclick="AdicionarNumero('0')">0</button>
-                    <button onclick="AdicionarNumero(',')">,</button>
+                    <button onclick="AdicionarNumero('.')">.</button>
                     <button onclick="AdicionarNumero('*')">*</button>
                 </div>
 
                 <div class="confirmar">
-                    <button></button>
+                    <button onclick="CalcularResultado()">=</button>
                 </div>
             </div>
         </section>
     </main>
 
+    <script src="js/script.js"></script>
 </body>
 
 </html>
