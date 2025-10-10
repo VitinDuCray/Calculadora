@@ -20,36 +20,39 @@
             <h3>Envolve 4 exercícios</h3>
 
             <div class="calculadora">
-                <div id="visor" class="previa">
+                <div id="visor" class="visor">
                 </div>
-                <div class="resultado">
 
+                <div class="extraButtons">
+                    <button onclick="ToggleLigado()" id="botao-ligar">OFF</button>
+                    <button onclick="LimparVisor()">C</button>
+                    <button onclick="ApagarUltimo()">⌫</button>
                 </div>
+
                 <div class="coluna">
                     <button onclick="AdicionarNumero('7')">7</button>
                     <button onclick="AdicionarNumero('8')">8</button>
                     <button onclick="AdicionarNumero('9')">9</button>
-                    <button onclick="AdicionarNumero('+')">+</button>
+                    <button onclick="AdicionarNumero('(')">(</button>
+                    <button onclick="AdicionarNumero(')')">)</button>
 
                     <button onclick="AdicionarNumero('4')">4</button>
                     <button onclick="AdicionarNumero('5')">5</button>
                     <button onclick="AdicionarNumero('6')">6</button>
-                    <button onclick="AdicionarNumero('-')">-</button>
+                    <button onclick="AdicionarNumero('/')">/</button>
+                    <button onclick="AdicionarNumero('*')">*</button>
 
                     <button onclick="AdicionarNumero('1')">1</button>
                     <button onclick="AdicionarNumero('2')">2</button>
                     <button onclick="AdicionarNumero('3')">3</button>
-                    <button onclick="AdicionarNumero('/')">/</button>
+                    <button onclick="AdicionarNumero('-')">-</button>
+                    <button onclick="AdicionarNumero('+')">+</button>
 
-                    <button class="nulo">V</button>
                     <button onclick="AdicionarNumero('0')">0</button>
                     <button onclick="AdicionarNumero('.')">.</button>
-                    <button onclick="AdicionarNumero('*')">*</button>
+                    <button class="resultado" onclick="CalcularResultado()">=</button>
                 </div>
 
-                <div class="confirmar">
-                    <button onclick="CalcularResultado()">=</button>
-                </div>
             </div>
         </section>
     </main>

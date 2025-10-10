@@ -1,3 +1,20 @@
+:root {
+    --texto-botao: #ffffff;
+    --texto-visor: #000000;
+
+    --cinza-main: #161616;
+    --cinza-botao: #222222;
+    --cinza-luz: #363636;
+    --cinza-sombra: #000000;
+
+    --botao-mais: #63248d;
+    --botao-luz: #8738bb;
+    --botao-sombra: #2f173f;
+
+    --visor-main: #186241;
+    --visor-sombra: #123b29;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -16,18 +33,21 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 310px;
+    width: 410px;
     height: 450px;
     border-radius: 10px;
-    background-color: #090B0A;
+    background-color: var(--cinza-main);
 }
 
-.previa {
+.visor {
     display: flex;
     width: 250px;
     height: 50px;
-    background-color: #186241;
-    font-weight: 350px;
+    color: var(--texto-visor);
+    background-color: var(--visor-main);
+    border: 2px solid var(--visor-sombra);
+    font-family: "Handjet", sans-serif;
+    font-size: 26px;
     border-radius: 5px;
     text-align: center;
     justify-content: start;
@@ -37,30 +57,33 @@ body {
 }
 
 .coluna {
-    width: 246px;
+    width: 308px;
     display: grid;
     gap: 2px;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     justify-content: center;
 }
 
 .coluna button {
     width: 60px;
     height: 60px;
-    background-color: #1f7b51;
-    border-radius: 3px;
-    border: none;
+    color: var(--texto-botao);
+    background-color: var(--cinza-botao);
+    border-top: 2px solid var(--cinza-luz);
+    border-right: 2px solid var(--cinza-luz);
+    border-left: 2px solid var(--cinza-sombra);
+    border-bottom: 2px solid var(--cinza-sombra);
+    border-radius: 8px;
+    font-family: "Handjet", sans-serif;
+    font-size: 26px;
+    cursor: pointer;
 }
 
-.nulo {
-    font-size: 0px;
-}
-
-.confirmar button {
-    background-color: #3DF5A2;
-    height: 60px;
-    width: 246px;
-    margin: 5px;
-    border-radius: 10px;
-    border: none;
+.coluna button.resultado {
+    color: var(--texto-botao);
+    background-color: var(--botao-mais);
+    border-top: 2px solid var(--botao-luz);
+    border-right: 2px solid var(--botao-luz); 
+    border-left: 2px solid var(--botao-sombra);
+    border-bottom: 2px solid var(--botao-sombra);
 }
