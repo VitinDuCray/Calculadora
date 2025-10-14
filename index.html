@@ -13,11 +13,12 @@
 
 <body>
     <main>
-        <h1>Revisão JavaScript</h1>
+        <h1>Calculadora</h1>
 
         <section>
-            <h2>Calculadora</h2>
-            <h3>Envolve 4 exercícios</h3>
+            <h2>Aprendendo JavaScript</h2>
+
+            <button onclick="toggleTheme()">Trocar Tema</button>
 
             <div class="calculadora">
                 <div id="visor" class="visor">
@@ -47,7 +48,9 @@
                     <button onclick="AdicionarNumero('3')">3</button>
                     <button onclick="AdicionarNumero('-')">-</button>
                     <button onclick="AdicionarNumero('+')">+</button>
-
+                </div>
+                <div class="coluna2">
+                    <div class="nulo">O vito é muito lindo</div>
                     <button onclick="AdicionarNumero('0')">0</button>
                     <button onclick="AdicionarNumero('.')">.</button>
                     <button class="resultado" onclick="CalcularResultado()">=</button>

@@ -1,11 +1,15 @@
 :root {
+    --background: #4d3838;
+
     --texto-botao: #ffffff;
     --texto-visor: #000000;
 
-    --cinza-main: #161616;
-    --cinza-botao: #222222;
-    --cinza-luz: #363636;
-    --cinza-sombra: #000000;
+    --cor-main: #161616;
+    --cor-botao: #222222;
+    --cor-luz: #363636;
+    --cor-sombra: #000000;
+    --cor-luz2: #202020;
+    --cor-sombra2: #0e0e0e;
 
     --botao-mais: #63248d;
     --botao-luz: #8738bb;
@@ -13,6 +17,27 @@
 
     --visor-main: #186241;
     --visor-sombra: #123b29;
+}
+
+.light-theme {
+    --background: #37b5f0;
+
+    --texto-botao: #000000;
+    --texto-visor: #000000;
+
+    --cor-main: #fff6c0;
+    --cor-botao: #fffbca;
+    --cor-luz: #fffaea;
+    --cor-sombra: #b6a576;
+    --cor-luz2: #fff7ca;
+    --cor-sombra2: #c9bb70;
+
+    --botao-mais: #30d1b4;
+    --botao-luz: #55f1d5;
+    --botao-sombra: #12977f;
+
+    --visor-main: #3fa391;
+    --visor-sombra: #276459;
 }
 
 * {
@@ -26,6 +51,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: "Handjet", sans-serif;
+    background-color: var(--background);
 }
 
 .calculadora {
@@ -33,27 +59,39 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 410px;
-    height: 450px;
+
+    width: 390px;
+    height: 480px;
+
+    border-top: 2px solid var(--cor-luz2);
+    border-right: 2px solid var(--cor-luz2);
+    border-left: 2px solid var(--cor-sombra2);
+    border-bottom: 2px solid var(--cor-sombra2);
     border-radius: 10px;
-    background-color: var(--cinza-main);
+
+    background-color: var(--cor-main);
+    box-shadow: 5px 10px 18px rgba(0, 0, 0, 0.75);
 }
 
 .visor {
     display: flex;
-    width: 250px;
-    height: 50px;
-    color: var(--texto-visor);
-    background-color: var(--visor-main);
-    border: 2px solid var(--visor-sombra);
-    font-family: "Handjet", sans-serif;
-    font-size: 26px;
-    border-radius: 5px;
-    text-align: center;
     justify-content: start;
     align-items: center;
     padding: 10px;
     margin: 10px;
+    margin-top: 50px;
+
+    width: 308px;
+    height: 50px;
+
+    background-color: var(--visor-main);
+    border: 2px solid var(--visor-sombra);
+    border-radius: 5px;
+
+    color: var(--texto-visor);
+    font-family: "Handjet", sans-serif;
+    font-size: 26px;
+    text-align: center;
 }
 
 .coluna {
@@ -64,26 +102,69 @@ body {
     justify-content: center;
 }
 
-.coluna button {
+.coluna button,
+.coluna2 button {
     width: 60px;
     height: 60px;
+
     color: var(--texto-botao);
-    background-color: var(--cinza-botao);
-    border-top: 2px solid var(--cinza-luz);
-    border-right: 2px solid var(--cinza-luz);
-    border-left: 2px solid var(--cinza-sombra);
-    border-bottom: 2px solid var(--cinza-sombra);
-    border-radius: 8px;
     font-family: "Handjet", sans-serif;
     font-size: 26px;
+
+    background-color: var(--cor-botao);
+    border-top: 2px solid var(--cor-luz);
+    border-right: 2px solid var(--cor-luz);
+    border-left: 2px solid var(--cor-sombra);
+    border-bottom: 2px solid var(--cor-sombra);
+    border-radius: 8px;
+
     cursor: pointer;
 }
 
-.coluna button.resultado {
+.coluna2 {
+    width: 308px;
+    display: grid;
+    margin-top: 2px;
+    gap: 2px;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+}
+
+.coluna2 button.resultado {
+    width: 120px;
     color: var(--texto-botao);
     background-color: var(--botao-mais);
     border-top: 2px solid var(--botao-luz);
-    border-right: 2px solid var(--botao-luz); 
+    border-right: 2px solid var(--botao-luz);
     border-left: 2px solid var(--botao-sombra);
     border-bottom: 2px solid var(--botao-sombra);
+}
+
+.nulo {
+    filter: opacity(0%);
+}
+
+.extraButtons {
+    display: flex;
+    width: 250px;
+    margin: 10px;
+    justify-content: space-between;
+}
+
+.extraButtons button {
+    width: 60px;
+    height: 35px;
+
+    color: var(--texto-botao);
+    font-family: "Handjet", sans-serif;
+    font-size: 18px;
+
+    background-color: var(--cor-botao);
+    border-top: 2px solid var(--cor-luz);
+    border-right: 2px solid var(--cor-luz);
+    border-left: 2px solid var(--cor-sombra);
+    border-bottom: 2px solid var(--cor-sombra);
+    border-radius: 8px;
+
+    cursor: pointer;
 }

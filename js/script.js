@@ -7,18 +7,17 @@ function ToggleLigado() {
     const visor = document.getElementById("visor");
     const botaoLigar = document.getElementById("botao-ligar");
 
-    // Seleciona todos os botões, exceto o de ligar/desligar
     const botoes = document.querySelectorAll("button:not(#botao-ligar)");
 
     if (ligado) {
         visor.innerText = "";
         botoes.forEach(btn => btn.disabled = false);
-        botaoLigar.innerText = "OFF"; // botão agora desliga
+        botaoLigar.innerText = "OFF";
     } else {
         visor.innerText = "";
         botoes.forEach(btn => btn.disabled = true);
-        botaoLigar.disabled = false; // mantém botão de ligar funcionando
-        botaoLigar.innerText = "ON"; // botão agora liga
+        botaoLigar.disabled = false;
+        botaoLigar.innerText = "ON";
     }
 
     resultadoMostrado = false;
@@ -64,3 +63,18 @@ function ApagarUltimo() {
         visor.innerText = visor.innerText.slice(0, -1);
     }
 }
+
+function toggleTheme() {
+  const html = document.documentElement;
+  html.classList.toggle('light-theme');
+
+  const isLight = html.classList.contains('light-theme');
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
+    document.documentElement.classList.add('light-theme');
+  }
+});
