@@ -48,10 +48,23 @@
 
 body {
     display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    font-family: "Lexend", sans-serif;
+
+    background-color: var(--background);
+
+    height: 100vh;
+    width: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: "Handjet", sans-serif;
-    background-color: var(--background);
+    flex: 1;
 }
 
 .calculadora {
@@ -108,7 +121,7 @@ body {
     height: 60px;
 
     color: var(--texto-botao);
-    font-family: "Handjet", sans-serif;
+    font-family: "Lexend", sans-serif;
     font-size: 26px;
 
     background-color: var(--cor-botao);
@@ -156,7 +169,7 @@ body {
     height: 35px;
 
     color: var(--texto-botao);
-    font-family: "Handjet", sans-serif;
+    font-family: "Lexend", sans-serif;
     font-size: 18px;
 
     background-color: var(--cor-botao);
@@ -167,4 +180,24 @@ body {
     border-radius: 8px;
 
     cursor: pointer;
+}
+
+.creditos {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    width: 100%;
+    height: 30px;
+
+    gap: 5px;
+    padding: 8px;
+
+    font-size: 19px;
+}
+
+.creditos button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
 }
