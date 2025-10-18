@@ -13,17 +13,65 @@
 </head>
 
 <body>
+    <div id="overlay" class="overlay">
+        <div class="overlay-content">
+
+            <div class="overlay-sides">
+
+                <div class="left-ov">
+                    <h2>Explicando o código</h2>
+                    <h4>Base do Projeto</h4>
+                    <p>Projeto Front End, utilizando HTML5, CSS3 e JavaScript.</p>
+
+                    <h4>Sobre o Projeto</h4>
+                    <p>O HTML foi utilizado para estruturar o conteúdo da página, o CSS para definir o layout e o
+                        estilo visual, e o JavaScript para adicionar interatividade, tornando a calculadora funcional.
+                        O objetivo do projeto era criar uma calculadora virtual que simulasse uma calculadora física.
+                        Ela possui aparência de uma calculadora real, pode ser ligada e desligada, e cada botão funciona
+                        como em um
+                        dispositivo físico. Implementei um visor que armazenava cada dígito pressionado como uma String
+                        (texto). Ao apertar o botão de resultado, a função eval interpretava a String como uma expressão
+                        matemática,
+                        permitindo que o cálculo fosse realizado e exibido no visor.</p>
+
+                    <h4>Busca de realismo</h4>
+                    <p>Com o JavaScript, criei uma função de ligar e desligar a calculadora, ativando ou desativando
+                        todos botões que não sejam o próprio botão Power, também limpando o visor ao ligar e desligar.
+                    </p>
+                </div>
+
+                <div class="right-ov">
+                    <img src="assets/cores.png" alt="Códigos que definem as cores do projeto">
+                    <div class="texts">
+                        <h4>Visando UI/UX</h4>
+                        <p>O projeto conta com um sistema de temas claro e escuro, que altera cores da calculadora e salva a
+                            preferência do usuário para ser mantida ao recarregar a página.
+                            Usei o :root no CSS para definir variáveis de cores do tema padrão e criei uma classe
+                            .light-theme com cores alternativas para o tema claro. No JavaScript, adicionei uma função que
+                            alterna essa classe no <code>&lt;html&gt;</code> ao clicar no botão, permitindo que o usuário troque entre os
+                            temas, e salvei a escolha no localStorage para manter o tema ao recarregar a página.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <button onclick="fecharOverlay()">Fechar</button>
+
+        </div>
+    </div>
+
     <main>
         <h1>Calculadora</h1>
         <h2>Aprendendo JavaScript</h2>
 
         <section>
-            <div class="calculadora">
+            <div id="calculadora" class="calculadora">
                 <div id="visor" class="visor">
                 </div>
 
                 <div class="extraButtons">
-                    <button onclick="ToggleLigado()" id="botao-ligar">OFF</button>
+                    <button onclick="ToggleLigado()" id="botao-ligar">POWER</button>
                     <button onclick="LimparVisor()">C</button>
                     <button onclick="ApagarUltimo()">⌫</button>
                 </div>
@@ -59,8 +107,17 @@
     </main>
 
     <footer class="creditos">
-        <p>Trocar Tema</p>
-        <button onclick="toggleTheme()"></button>
+
+        <div class="left">
+            <p>Explicando o código</p>
+            <button onclick="mostrarOverlay()"></button>
+        </div>
+
+        <div class="right">
+            <p>Trocar Tema</p>
+            <button onclick="toggleTheme()"></button>
+        </div>
+
     </footer>
 
     <script src="js/script.js"></script>

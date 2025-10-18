@@ -7,26 +7,25 @@ function ToggleLigado() {
     const visor = document.getElementById("visor");
     const botaoLigar = document.getElementById("botao-ligar");
 
-    const botoes = document.querySelectorAll("button:not(#botao-ligar)");
+    const botoes = document.querySelectorAll("#calculadora button:not(#botao-ligar)");
 
     if (ligado) {
-        visor.innerText = "";
+        visor.innerText = "0";
         botoes.forEach(btn => btn.disabled = false);
-        botaoLigar.innerText = "OFF";
     } else {
         visor.innerText = "";
         botoes.forEach(btn => btn.disabled = true);
         botaoLigar.disabled = false;
-        botaoLigar.innerText = "ON";
     }
 
     resultadoMostrado = false;
 }
 
+
 function AdicionarNumero(valor) {
     const visor = document.getElementById("visor");
 
-    if (resultadoMostrado) {
+    if (resultadoMostrado || visor.innerText === "0") {
         visor.innerText = "";
         resultadoMostrado = false;
     }
@@ -49,7 +48,7 @@ function CalcularResultado() {
 
 function LimparVisor() {
     const visor = document.getElementById("visor");
-    visor.innerText = "";
+    visor.innerText = "0";
     resultadoMostrado = false;
 }
 
@@ -78,3 +77,11 @@ window.addEventListener('DOMContentLoaded', () => {
     document.documentElement.classList.add('light-theme');
   }
 });
+
+function mostrarOverlay() {
+  document.getElementById('overlay').style.display = 'flex';
+}
+
+function fecharOverlay() {
+  document.getElementById('overlay').style.display = 'none';
+}
